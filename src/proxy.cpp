@@ -56,7 +56,7 @@ using namespace boost::placeholders;
 #include <tf2_ros/transform_listener.h>
 
 #include <interactive_markers/interactive_marker_client.h>
-#include <interactive_marker_proxy/GetInit.h>
+#include <interactive_marker_proxy/GetInit.h> // Generated from service message
 
 using namespace interactive_markers;
 

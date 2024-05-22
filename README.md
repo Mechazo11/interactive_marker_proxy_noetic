@@ -11,7 +11,7 @@ This project is released as part of the [Robot Web Tools](http://robotwebtools.o
 Tested in Ubuntu 20.04, ROS Noetic computer. Key changes made are
 * Updated requirements as follows 
     * ```Cmake >=3.5.0```
-* Merged changes by ```witalij``` (https://github.com/RobotWebTools/interactive_marker_proxy/pull/4/commits/5dacab652f5f6fc54bb70aacf5ebb0cc52d851f5)
+* Merged commits from this [fork](https://github.com/dragandbot/interactive_marker_proxy)
 
 ### License
 ```interactive_marker_proxy``` is released with a BSD license. For full terms and conditions, see the [LICENSE](LICENSE) file.
