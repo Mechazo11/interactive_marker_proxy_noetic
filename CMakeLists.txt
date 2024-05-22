@@ -1,10 +1,13 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5.0)
 project(interactive_marker_proxy)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS roscpp interactive_markers message_generation visualization_msgs)
+
+find_package(Boost REQUIRED)
+add_definitions(-DBOOST_BIND_GLOBAL_PLACEHOLDERS)
 
 #######################################
 ## Declare ROS messages and services ##
@@ -39,11 +42,12 @@ catkin_package(
 ## Specify additional locations of header files
 include_directories(
   ${catkin_INCLUDE_DIRS}
+  ${Boost_INCLUDE_DIRS}
 )
 
 ## Declare a cpp executables and libraries
 add_executable(${PROJECT_NAME} src/proxy.cpp)
-target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 add_dependencies(${PROJECT_NAME} ${PROJECT_NAME}_gencpp)
 set_target_properties(${PROJECT_NAME}
   PROPERTIES OUTPUT_NAME proxy
